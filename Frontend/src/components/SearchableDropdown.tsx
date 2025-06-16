@@ -108,10 +108,10 @@ export default function SearchableDropdown({
           {value ? (
             <div>
               <div className="font-medium">{value.label}</div>
-              {value.sublabel && <div className="text-sm text-gray-500">{value.sublabel}</div>}
+              {value.sublabel && <div className="text-sm text-gray-600">{value.sublabel}</div>}
             </div>
           ) : (
-            <span className="text-gray-500">{placeholder}</span>
+            <span className="text-gray-700">{placeholder}</span>
           )}
         </span>
         <span className="absolute inset-y-0 right-0 flex items-center pr-2">
@@ -136,7 +136,7 @@ export default function SearchableDropdown({
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder={searchPlaceholder}
-                className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-gray-950"
               />
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function SearchableDropdown({
                   <div className="font-medium text-blue-600">
                     {customValueLabel} "{searchTerm.trim()}"
                   </div>
-                  <div className="text-xs text-gray-500">Create new item</div>
+                  <div className="text-xs text-gray-600">Create new item</div>
                 </div>
               </button>
             )}
@@ -165,12 +165,12 @@ export default function SearchableDropdown({
                 >
                   <div>
                     <div className="font-medium text-gray-900">{option.label}</div>
-                    {option.sublabel && <div className="text-gray-500">{option.sublabel}</div>}
+                    {option.sublabel && <div className="text-gray-600">{option.sublabel}</div>}
                   </div>
                 </button>
               ))
             ) : !showCustomValue ? (
-              <div className="px-3 py-2 text-sm text-gray-500 text-center">No results found</div>
+              <div className="px-3 py-2 text-sm text-gray-600 text-center">No results found</div>
             ) : null}
           </div>
         </div>

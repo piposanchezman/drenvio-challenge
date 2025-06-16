@@ -229,8 +229,8 @@ export default function SubidaPage() {
                       setEmail("")
                     }
                   }}
-                  placeholder={isLoadingUsers ? "Loading users..." : "Search user or enter new email"}
-                  searchPlaceholder="Search by email or name..."
+                  placeholder={isLoadingUsers ? "Cargando usuarios..." : "Buscando usuario o ingrese nuevo email..."}
+                  searchPlaceholder="Buscar por correo o por nombre..."
                   disabled={isLoadingUsers || isCheckingUser}
                   allowCustomValue={true}
                   customValueLabel="New user:"
@@ -242,7 +242,7 @@ export default function SubidaPage() {
                   </div>
                 )}
               </div>
-              {existingUser && <p className="mt-1 text-sm text-blue-600">Existing user found - data will be updated</p>}
+              {existingUser && <p className="mt-1 text-sm text-blue-600">Usuario existente encontrado - se actualizarán los datos</p>}
             </div>
 
             <div>
@@ -254,8 +254,8 @@ export default function SubidaPage() {
                 id="userName"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Username"
+                className="relative w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-left text-gray-700 cursor-pointer focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                placeholder="Ingresa el nombre de usuario"
                 required
               />
             </div>
@@ -303,8 +303,8 @@ export default function SubidaPage() {
                             onChange={(option) => {
                               updateProduct(index, "productId", option?.value || "")
                             }}
-                            placeholder={isLoadingProducts ? "Loading products..." : "Select product"}
-                            searchPlaceholder="Search by name or SKU..."
+                            placeholder={isLoadingProducts ? "Cargando productos..." : "Seleccionar producto"}
+                            searchPlaceholder="Buscar por nombre o SKU..."
                             disabled={isLoadingProducts}
                             allowClear={false}
                           />
@@ -337,13 +337,13 @@ export default function SubidaPage() {
                           min="0"
                           value={product.specialPrice}
                           onChange={(e) => updateProduct(index, "specialPrice", e.target.value)}
-                          className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                          className="relative w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-left text-gray-950 cursor-pointer focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
                           placeholder="0.00"
                           required
                         />
                         {selectedProduct && product.specialPrice && (
                           <div className="mt-1 text-xs">
-                            <span className="text-gray-500">
+                            <span className="text-gray-600">
                               Current price: <del>€{selectedProduct.precio.toFixed(2)}</del>
                             </span>
                             <span className="ml-2 text-green-600 font-medium">

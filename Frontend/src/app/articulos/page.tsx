@@ -152,7 +152,7 @@ export default function ArticulosPage() {
                 handleUserSelect(null)
               }
             }}
-            placeholder={isLoadingUsers ? "Loading users..." : "Select user"}
+            placeholder={isLoadingUsers ? "Cargando usuarios..." : "Selecciona un usuario"}
             searchPlaceholder="Search by name or email..."
             disabled={isLoadingUsers}
             className="w-full sm:w-80"
@@ -165,7 +165,7 @@ export default function ArticulosPage() {
         <div className="bg-blue-50 border border-blue-200 rounded-md p-4">
           <div className="flex items-center">
             <LoadingSpinner size="sm" />
-            <span className="ml-2 text-sm text-blue-700">Loading special prices for {selectedUser.user}...</span>
+            <span className="ml-2 text-sm text-blue-700">Cargando precios especiales para {selectedUser.user}...</span>
           </div>
         </div>
       )}
@@ -176,17 +176,17 @@ export default function ArticulosPage() {
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
                   Producto
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">SKU</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">SKU</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
                   Categoría
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
                   Stock
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
                   Precio
                 </th>
               </tr>
@@ -209,14 +209,14 @@ export default function ArticulosPage() {
                             />
                           ) : (
                             <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">
-                              <Package className="w-5 h-5 text-gray-400" />
+                              <Package className="w-5 h-5 text-gray-600" />
                             </div>
                           )}
                         </div>
                         <div className="ml-4">
                           <div className="text-sm font-medium text-gray-900">{product.nombre}</div>
                           {product.descripcion && (
-                            <div className="text-sm text-gray-500 truncate max-w-xs">{product.descripcion}</div>
+                            <div className="text-sm text-gray-600 truncate max-w-xs">{product.descripcion}</div>
                           )}
                         </div>
                       </div>
@@ -226,10 +226,10 @@ export default function ArticulosPage() {
                         {product.sku}
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                       {product.categoria || "Sin categoría"}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                       <span
                         className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                           (product.stock || 0) > 0 ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
@@ -241,7 +241,7 @@ export default function ArticulosPage() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm">
                       {hasSpecialPrice ? (
                         <div className="space-y-1">
-                          <div className="text-gray-500">
+                          <div className="text-gray-600">
                             <del>{formatPrice(product.precio)}</del>
                           </div>
                           <div className="text-green-600 font-semibold">{formatPrice(specialPrice)}</div>
@@ -261,8 +261,8 @@ export default function ArticulosPage() {
         {products.length === 0 && (
           <div className="text-center py-12">
             <Package className="mx-auto h-12 w-12 text-gray-400" />
-            <h3 className="mt-2 text-sm font-medium text-gray-900">No products</h3>
-            <p className="mt-1 text-sm text-gray-500">No products found in the system.</p>
+            <h3 className="mt-2 text-sm font-medium text-gray-900">No hay productos</h3>
+            <p className="mt-1 text-sm text-gray-600">No se han encontrado productos en el sistema.</p>
           </div>
         )}
       </div>
